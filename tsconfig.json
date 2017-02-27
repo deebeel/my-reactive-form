@@ -6,6 +6,7 @@
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
+    "target": "es5",
     "experimentalDecorators": true,
     "lib": [
       "es2016"

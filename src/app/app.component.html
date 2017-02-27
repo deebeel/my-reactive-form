@@ -1,3 +1,31 @@
 <h1>
-  {{title}}
+  non blank value:
+  {{group.nonBlankValue | json}}
+  <br>
+
+  {{group.value | json}}
+  <br>
+  dirty:
+  {{group.dirty | json}}
+  <br>
+  touched:
+  {{group.touched | json}}
+  <br>
+  modified:
+  {{group.modified | json}}
+
+  <form [formGroup]="group">
+    <input formControlName="f1"/>
+    <div formGroupName="f2">
+      <input formControlName="ff1"/>
+      <input formControlName="ff2"/>
+    </div>
+    <div formArrayName="f3">
+      <div *ngFor="let i of group.controls.f3.controls; let ii = index">
+        <input [formControlName]="ii">
+      </div>
+    </div>
+  </form>
+  <button (click)="add()">ADD</button>
+  <button (click)="remove()">remove</button>
 </h1>
